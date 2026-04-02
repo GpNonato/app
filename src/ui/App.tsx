@@ -2,27 +2,17 @@ import './App.css'
 
 function App() {
   const handleRunBot = () => {
-    //window.api.runBot()
-  }
+    window.api.runBot();
+  };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <button
-        onClick={handleRunBot}
-        style={{
-          padding: '20px 40px',
-          fontSize: '1.5rem',
-          cursor: 'pointer',
-          borderRadius: '10px',
-          backgroundColor: 'red',
-          color: 'white',
-          border: 'none'
-        }}
-      >
-        Run Bot
+    <div>
+      <h1>Meu App</h1>
+      <button onClick={handleRunBot}>
+        Rodar Bot
       </button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
