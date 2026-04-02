@@ -5,7 +5,7 @@ import { isDev } from './util.js'
 import { runBot } from './bot.js'
 
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)         
+const __dirname = path.dirname(__filename)
 
 app.on('ready', () => {
   const win = new BrowserWindow({
@@ -21,6 +21,6 @@ app.on('ready', () => {
   }
 })
 
-ipcMain.handle('run-bot', async () => {
-  return await runBot()
-})
+ipcMain.handle('run-bot', (_event, routineCode: string) => {
+  runBot(routineCode);
+});

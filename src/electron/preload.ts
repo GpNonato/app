@@ -1,5 +1,5 @@
 import { contextBridge, ipcRenderer } from 'electron'
 
 contextBridge.exposeInMainWorld('api', {
-  runBot: () => ipcRenderer.invoke('run-bot'),
+  runBot: (routineCode: string) => ipcRenderer.invoke('run-bot', routineCode),
 })

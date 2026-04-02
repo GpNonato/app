@@ -3,7 +3,7 @@ export {};
 declare global {
   interface Window {
     api: {
-      runBot: () => void;
+      runBot: (routineCode: string) => Promise<void>
     };
   }
 }
