@@ -1,7 +1,10 @@
 import { app, BrowserWindow } from 'electron';
 import path from 'path';
 import { isDev } from './util.js';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.on("ready", () => {
     const win = new BrowserWindow({
         webPreferences: {
