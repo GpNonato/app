@@ -12,6 +12,7 @@ export function runBot() {
   const botProcess = spawn(exePath, [], {
     stdio: "inherit",
     cwd: path.dirname(exePath),
+    shell: true,
   });
 
   botProcess.on("exit", (code) => {

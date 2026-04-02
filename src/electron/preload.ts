@@ -1,6 +1,5 @@
-import { contextBridge } from "electron";
-import { runBot } from "./bot.js";
+import { contextBridge, ipcRenderer } from 'electron'
 
-contextBridge.exposeInMainWorld("api", {
-  runBot: () => runBot(),
-});
+contextBridge.exposeInMainWorld('api', {
+  runBot: () => ipcRenderer.invoke('run-bot'),
+})
