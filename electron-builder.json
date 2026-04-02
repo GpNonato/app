@@ -1,5 +1,5 @@
 {
-    "appId": "com.farid.app", 
+    "appId": "com.farid.app",
     "files": ["dist-electron", "dist-react"],
     "icon": "./robo.png",
     "mac": {
@@ -10,6 +10,12 @@
         "category": "Utility"
     },
     "win": {
-        "target": ["portable","msi"]
-    }
+        "target": ["portable", "msi"]
+    },
+    "extraResources": [
+        {
+            "from": "resources/",
+            "to": "resources/"
+        }
+    ]
 }
