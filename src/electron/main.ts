@@ -1,9 +1,15 @@
-import {app , BrowserWindow} from 'electron';
+import { app, BrowserWindow } from 'electron';
 import path from 'path';
-
-//type test = string;
+import { isDev } from './util.js';
 
 app.on("ready", () => {
     const win = new BrowserWindow({});
-    win.loadFile(path.join(app.getAppPath(), "/dist-react/index.html"));
+
+    if (isDev()) {
+        win.loadURL('http://localhost:5123'); 
+    } else {
+        win.loadFile(path.join(app.getAppPath(), 'dist-react/index.html'));
+    }
+
+    win.webContents.openDevTools();
 });
